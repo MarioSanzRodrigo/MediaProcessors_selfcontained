@@ -1,6 +1,6 @@
-LIBNAME:= mediaprocsutils
+LIBNAME:= mediaprocstranscoders
 BUILD_DIR:= $(shell pwd)/build_dir
-SOURCE_DIR:= $(shell pwd)/../../MediaProcessors/utils
+SOURCE_DIR:= $(shell pwd)/../../MediaProcessors/transcoders
 PREFIX:= $(INSTALL_DIR)$(CROSS_ARCH)
 
 CONFIGURE_PARAMS= --prefix=$(PREFIX) --srcdir=$(SOURCE_DIR)
@@ -23,7 +23,7 @@ build: config
 install: build
 	cd $(BUILD_DIR); make install
 	#TODO: if flag GPL do TEST
-	#cd $(BUILD_DIR); make utest
+	cd $(BUILD_DIR); make utest
 	#endif
 
 clean:
